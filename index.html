@@ -1,50 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-     body {
-        box-sizing: border-box;
-     }
-     h1 #name{
-        font-weight: bold;
-    
-     }
-
-    </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
     <title>taskOne</title>
-</head>
-<body>
-    <h1>My name is:</h1>
-    <h1 data-testid="slackUserName" id="name">Sinore</h1>
-    <img data-testid="slackDisplayImage" src="https://ca.slack-edge.com/T05FFAA91JP-U05RNC05ELB-98faacdbc816-48" alt="Sinore">
-    <h2 data-testid="myTrack">Frontend </h2>
-    <a href="https://github.com/Leilasinore/zuri_hng_task1" data-testid=“githubURL”>Click here for github repository</a>
-
-    <h1>Today is:</h1>
-    <div id="day-of-week" data-testid="currentDayOfTheWeek"></div>
-
-    <h1>Current UTC Time in Milliseconds:</h1>
-    <div id="utc-time" data-testid="currentUTCTime"></div>
+  </head>
+  <body>
+    <div class="cardcontainer">
+      <div class="imgcard">
+        <img
+          data-testid="slackDisplayImage"
+          src="https://ca.slack-edge.com/T05FFAA91JP-U05RNC05ELB-98faacdbc816-48"
+          alt="Sinore"
+        />
+      </div>
+      <div class="cardcontent">
+        <h1 data-testid="slackUserName" class="name">Sinore</h1>
+        <div id="day-of-week" data-testid="currentDayOfTheWeek"></div>
+        <div id="utc-time" data-testid="currentUTCTime"></div>
+        <h2 data-testid="myTrack">Frontend</h2>
+        <a
+          href="https://github.com/Leilasinore/zuri_hng_task1"
+          data-testid="“githubURL”"
+          >github repository</a
+        >
+      </div>
+    </div>
 
     <script>
-        
-        const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        const today = new Date();
-        const dayOfWeek = weekDays[today.getDay()];
+      const weekDays = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+      const today = new Date();
+      const dayOfWeek = weekDays[today.getDay()];
 
-        // Display the current day of week
-        const dayOfWeekElement = document.getElementById('day-of-week');
-        dayOfWeekElement.textContent = dayOfWeek;
+      // Display the current day of week
+      const dayOfWeekElement = document.getElementById("day-of-week");
+      dayOfWeekElement.textContent = dayOfWeek;
 
-        // JavaScript code to get the current UTC time in milliseconds
-        const currentTimeMillis = Date.now();
+      // JavaScript code to get the current UTC time in milliseconds
+      const currentTimeMillis = Date.now();
 
-        // Display the current UTC time in milliseconds on the web page
-        const utcTimeElement = document.getElementById('utc-time');
-        utcTimeElement.textContent = currentTimeMillis;
-
+      // Display the current UTC time in milliseconds on the web page
+      const utcTimeElement = document.getElementById("utc-time");
+      utcTimeElement.textContent = currentTimeMillis;
     </script>
-</body>
+  </body>
 </html>
